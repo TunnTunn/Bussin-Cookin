@@ -78,6 +78,9 @@ const notificationRouters = require("./routes/notificationRouters");
 
 app.use("/notifications", notificationRouters);
 
+app.use("/css", express.static(path.join(__dirname, "public/css")));
+app.use("/scss", express.static(path.join(__dirname, "public/scss")));
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on: http://localhost:${PORT}`);
